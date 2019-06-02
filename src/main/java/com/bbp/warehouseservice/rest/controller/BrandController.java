@@ -37,7 +37,7 @@ public class BrandController {
             @RequestBody BrandCreateUpdateRestRequestDto restDto) {
         var facadeDto = mapper.toCreateUpdateFacadeRequest(restDto);
         var brand = facade.createBrand(facadeDto);
-        //TODO fix null in location
+        //TODO fix null in resource location
         return ResponseEntity.created(null).body(mapper.toRestResponse(brand));
     }
 

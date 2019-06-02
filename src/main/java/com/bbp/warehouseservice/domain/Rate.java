@@ -8,7 +8,7 @@ import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 
-@EqualsAndHashCode(of = {"userId", "inventory"})
+@EqualsAndHashCode(of = {"user", "inventory"})
 @Getter
 @Setter
 @NoArgsConstructor

@@ -4,14 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-import java.util.Optional;
-
 //TODO
-//logging
+//Logging -> local + ELK
 //ControllerAdvice
 
 //Validation
-//tree
+////implement closure table tree logic
 //Security with user auditing
 //PatchMethods(partial update)
 //SoftDelete

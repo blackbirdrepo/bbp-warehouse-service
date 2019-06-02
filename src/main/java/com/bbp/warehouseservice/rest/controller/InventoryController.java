@@ -1,7 +1,6 @@
 package com.bbp.warehouseservice.rest.controller;
 
 
-
 import com.bbp.warehouseservice.facade.InventoryFacade;
 import com.bbp.warehouseservice.rest.dto.InventoryCreateUpdateRestRequestDto;
 import com.bbp.warehouseservice.rest.dto.InventoryRestResponseDto;
@@ -39,14 +38,13 @@ public class InventoryController {
             @RequestBody InventoryCreateUpdateRestRequestDto restDto) {
         var facadeDto = mapper.toCreateUpdateFacadeRequest(restDto);
         var inventory = facade.createInventory(facadeDto);
-        //TODO fix null in location
+        //TODO fix null in resource location
         return ResponseEntity.created(null).body(mapper.toRestResponse(inventory));
     }
 
     @PutMapping(path = "/{inventoryId}")
-    public ResponseEntity<InventoryRestResponseDto> updateInventory(
-            @PathVariable("inventoryId") String inventoryId,
-            @RequestBody InventoryCreateUpdateRestRequestDto restDto) {
+    public ResponseEntity<InventoryRestResponseDto> updateInventory(@PathVariable("inventoryId") String inventoryId,
+                                                                    @RequestBody InventoryCreateUpdateRestRequestDto restDto) {
         var facadeDto = mapper.toCreateUpdateFacadeRequest(restDto);
         var inventory = facade.updateInventory(inventoryId, facadeDto);
         return ResponseEntity.ok().body(mapper.toRestResponse(inventory));

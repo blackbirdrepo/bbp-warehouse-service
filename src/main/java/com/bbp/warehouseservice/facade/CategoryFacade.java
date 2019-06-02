@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 @Transactional
 @Service
-//TODO ADD tree logic
+//TODO IMPLEMENT CLOSURE TABLE tree logic
 public class CategoryFacade {
 
     private final CategoryService categoryService;

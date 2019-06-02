@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
+//TODO IMPLEMENT CLOSURE TABLE tree logic
 public class CategoryJpaService implements CategoryService {
 
     private final CategoryRepository categoryRepository;

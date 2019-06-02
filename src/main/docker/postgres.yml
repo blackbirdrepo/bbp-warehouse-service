@@ -1,10 +1,11 @@
+#NOT USED
 version: '2'
 services:
   warehouseservice-postgresql:
     image: postgres:latest
     environment:
-      - POSTGRES_DB=warehouse
-      - POSTGRES_USER=warehouseuser
-      - POSTGRES_PASSWORD=docker
+    - POSTGRES_DB=warehouse
+    - POSTGRES_USER=warehouseuser
+    - POSTGRES_PASSWORD=docker
     ports:
-      - 5435:5432
+    - 5450:5432

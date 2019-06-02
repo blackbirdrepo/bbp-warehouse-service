@@ -40,7 +40,7 @@ public class RateController {
                                                           @RequestBody RateCreateUpdateRestRequestDto restDto) {
         var facadeDto = mapper.toCreateUpdateFacadeRequest(restDto);
         var rate = facade.createRate(inventoryId, facadeDto);
-        //TODO fix null in response URL
+        //TODO fix null in resource url
         return ResponseEntity.created(null).body(mapper.toRestResponse(rate));
     }
 
