@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: 'bbp-warehouse-service'
+  mvc:
+    favicon:
+      enabled: false
+  jpa:
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc.lob.non_contextual_creation: true
+  datasource:
+    url: 'jdbc:postgresql://localhost:5450/warehouse'
+    username: 'warehouseuser'
+    password: 'docker'
+    driver-class-name: 'org.postgresql.Driver'
+server:
+  port: 8050
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: Warehose Service Application. Responisible for inventories stock
+    version: 1.0.0
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint.health.show-details: always
+  security.enabled: false
+endpoints.health.sensitive: false
+eureka:
+  client:
+    registryFetchIntervalInSeconds: 10
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
